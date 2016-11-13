@@ -1,0 +1,71 @@
+body {
+    background-color: #CCCCCC;
+}
+
+.center_div{
+    margin-left: 100px;
+}
+
+.tg .tg-s6z2{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #947F7F;
+    text-align:center;
+    vertical-align: middle;
+}
+
+.uk-notify-message{
+    border-radius: 5px;
+}
+
+.msgstatus {
+    text-align: center;
+}
+
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: #c00;
+}
+
+input.options_buttons , .option_delete, .option_resend {
+    border-radius: 5px;
+    border: 1px solid rgba(120, 126, 176, 0.47);
+    cursor: pointer;
+    height: 32px;
+    width: 50px;
+}
+.option_delete {
+    background: #d1eafb url(../icons/icon_delete.png) no-repeat center;
+    background-size: 35%;
+}
+
+.option_delete:disabled {
+    background: rgba(129, 147, 163, 0.27) url(../icons/icon_delete_disabled.png) no-repeat center;
+    background-size: 35%;
+}
+
+.option_resend {
+    background: #d1eafb url(../icons/icon_reload.png) no-repeat center;
+    background-size: 35%;
+}
+
+.option_resend:disabled {
+    background: rgba(129, 147, 163, 0.27) url(../icons/icon_reload_disabled.png) no-repeat center;
+    background-size: 35%;
+}
