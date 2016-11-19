@@ -1,4 +1,4 @@
-package ru.svyaznoy.test.configuration;
+package com.serpentcross.examples.smsservice.configuration;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;

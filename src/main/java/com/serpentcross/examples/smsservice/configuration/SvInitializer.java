@@ -1,4 +1,4 @@
-package ru.svyaznoy.test.configuration;
+package com.serpentcross.examples.smsservice.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import javax.servlet.Filter;

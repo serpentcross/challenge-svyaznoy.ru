@@ -1,4 +1,4 @@
-package ru.svyaznoy.test.dao;
+package com.serpentcross.examples.smsservice.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,11 +7,11 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.svyaznoy.test.model.Response;
-import ru.svyaznoy.test.util.DateConverter;
-import ru.svyaznoy.test.util.MessageMapper;
-import ru.svyaznoy.test.model.Message;
-import ru.svyaznoy.test.util.SmsSender;
+import com.serpentcross.examples.smsservice.model.Response;
+import com.serpentcross.examples.smsservice.util.DateConverter;
+import com.serpentcross.examples.smsservice.util.MessageMapper;
+import com.serpentcross.examples.smsservice.model.Message;
+import com.serpentcross.examples.smsservice.util.SmsSender;
 
 import javax.sql.DataSource;
 import java.text.ParseException;

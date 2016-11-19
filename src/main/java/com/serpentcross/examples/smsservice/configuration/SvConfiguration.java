@@ -1,8 +1,8 @@
-package ru.svyaznoy.test.configuration;
+package com.serpentcross.examples.smsservice.configuration;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.LinkedHashMap;
 import java.util.Properties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,16 +16,17 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import javax.sql.DataSource;
+import com.serpentcross.examples.smsservice.constants.DataBaseProperties;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "ru.svyaznoy.test")
+@ComponentScan(basePackages = "com.serpentcross.examples.smsservice")
 public class SvConfiguration extends WebMvcConfigurerAdapter {
 
-	public String loadPropertiesFile(String requestParam) throws Exception {
+	public LinkedHashMap<String, String> loadPropertiesFile() throws Exception {
+
+		LinkedHashMap<String, String> connectionSettings = new LinkedHashMap<>();
 		InputStream inputStream = null;
-		ClassLoader classLoader = null;
-		String parameter = null;
 
 		try {
 			Properties properties = new Properties();
@@ -38,17 +39,18 @@ public class SvConfiguration extends WebMvcConfigurerAdapter {
 				throw new FileNotFoundException("Property file '" + propertiesFile + "'not found in the classpath");
 			}
 
-			parameter = properties.getProperty(requestParam);
-			System.out.println("/////////////////////////////////////////////");
-			System.out.println(parameter);
-			System.out.println("/////////////////////////////////////////////");
+			connectionSettings.put(DataBaseProperties.SQL_DRV, properties.getProperty(DataBaseProperties.SQL_DRV));
+			connectionSettings.put(DataBaseProperties.SQL_URL, properties.getProperty(DataBaseProperties.SQL_URL));
+			connectionSettings.put(DataBaseProperties.SQL_USR, properties.getProperty(DataBaseProperties.SQL_USR));
+			connectionSettings.put(DataBaseProperties.SQL_PSW, properties.getProperty(DataBaseProperties.SQL_PSW));
+
 		} catch (Exception e) {
 			System.err.println("Error! Exception:" + e);
 		} finally {
 			inputStream.close();
 		}
 
-		return parameter;
+		return connectionSettings;
 	}
 	
 	@Override
@@ -67,11 +69,14 @@ public class SvConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
 	public DataSource dataSource() throws Exception {
+
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(loadPropertiesFile("sql.driver"));
-		dataSource.setUrl("jdbc:mysql://localhost:3306/svyaznoy?useUnicode=yes&characterEncoding=UTF-8");
-		dataSource.setUsername("root");
-		dataSource.setPassword("");
+
+		dataSource.setDriverClassName(loadPropertiesFile().get(DataBaseProperties.SQL_DRV));
+		dataSource.setUrl(loadPropertiesFile().get(DataBaseProperties.SQL_URL));
+		dataSource.setUsername(loadPropertiesFile().get(DataBaseProperties.SQL_USR));
+		dataSource.setPassword(loadPropertiesFile().get(DataBaseProperties.SQL_PSW));
+
 		return dataSource;
 	}
 }

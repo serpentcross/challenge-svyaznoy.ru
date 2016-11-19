@@ -1,4 +1,4 @@
-package ru.svyaznoy.test.util;
+package com.serpentcross.examples.smsservice.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

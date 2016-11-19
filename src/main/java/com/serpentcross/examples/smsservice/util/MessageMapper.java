@@ -1,13 +1,10 @@
-package ru.svyaznoy.test.util;
+package com.serpentcross.examples.smsservice.util;
 
 import org.springframework.jdbc.core.RowMapper;
-import ru.svyaznoy.test.model.Message;
+import com.serpentcross.examples.smsservice.model.Message;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
 
 public class MessageMapper implements RowMapper<Message> {
     public Message mapRow(ResultSet resultSet, int rowNum) throws SQLException {

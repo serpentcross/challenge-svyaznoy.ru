@@ -1,13 +1,13 @@
-package ru.svyaznoy.test.controller;
+package com.serpentcross.examples.smsservice.controller;
 
+import com.serpentcross.examples.smsservice.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.svyaznoy.test.dao.MessageDAO;
-import ru.svyaznoy.test.model.Message;
-import ru.svyaznoy.test.model.Response;
+import com.serpentcross.examples.smsservice.dao.MessageDAO;
+import com.serpentcross.examples.smsservice.model.Response;
 
 import java.text.ParseException;
 import java.util.List;

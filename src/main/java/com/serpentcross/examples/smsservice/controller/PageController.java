@@ -1,4 +1,4 @@
-package ru.svyaznoy.test.controller;
+package com.serpentcross.examples.smsservice.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

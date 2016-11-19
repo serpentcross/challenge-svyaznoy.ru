@@ -1,7 +1,7 @@
-package ru.svyaznoy.test.dao;
+package com.serpentcross.examples.smsservice.dao;
 
-import ru.svyaznoy.test.model.Message;
-import ru.svyaznoy.test.model.Response;
+import com.serpentcross.examples.smsservice.model.Message;
+import com.serpentcross.examples.smsservice.model.Response;
 
 import javax.sql.DataSource;
 import java.text.ParseException;

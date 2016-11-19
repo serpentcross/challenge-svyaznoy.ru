@@ -1,4 +1,4 @@
-package ru.svyaznoy.test.model;
+package com.serpentcross.examples.smsservice.model;
 
 import lombok.Getter;
 import lombok.Setter;
