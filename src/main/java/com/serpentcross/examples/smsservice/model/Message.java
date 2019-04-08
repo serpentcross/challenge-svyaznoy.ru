@@ -1,14 +1,12 @@
 package com.serpentcross.examples.smsservice.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.util.Date;
-
+@Data
 public class Message {
-    @Getter @Setter String id;
-    @Getter @Setter String phnum;
-    @Getter @Setter String msgdate;
-    @Getter @Setter String status;
-    @Getter @Setter String msgtxt;
+    String id;
+    String phnum;
+    String msgdate;
+    String status;
+    String msgtxt;
 }

@@ -28,7 +28,7 @@
 
                         <div class="form-group">
                             <label for="smstext">Сообщение</label>
-                            <textarea class="form-control" rows="5" id="smstext" placeholder="Текст сообщения" style="width:600px;resize:none" disabled/></textarea>
+                            <textarea class="form-control" rows="5" id="smstext" placeholder="Текст сообщения" style="width:600px;resize:none" disabled></textarea>
                         </div>
 
                         <div class="form-group">

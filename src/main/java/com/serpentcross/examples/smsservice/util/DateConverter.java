@@ -2,6 +2,7 @@ package com.serpentcross.examples.smsservice.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 public class DateConverter {
@@ -13,7 +14,7 @@ public class DateConverter {
         return formatter.parse(formattedDate).getTime() / 1000;
     }
 
-    public static String getRegularFormat(Long dbDate) {
+    static String getRegularFormat(Long dbDate) {
         return formatter.format(new Date(dbDate * 1000L));
     }
 }

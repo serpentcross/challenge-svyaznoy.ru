@@ -8,10 +8,6 @@ import java.sql.SQLException;
 
 public class MessageMapper implements RowMapper<Message> {
     public Message mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-//
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//
-//        Date masd = new Date(resultSet.getLong("msgDate") * 1000L);
         Message message = new Message();
         message.setId(resultSet.getString("id"));
         message.setPhnum(resultSet.getString("phnum"));

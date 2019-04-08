@@ -154,7 +154,7 @@ $(document).ready(function() {
 
     $("#smsnumber").keydown(function (e) {
         if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) ||
+            (e.keyCode === 65 && ( e.ctrlKey === true || e.metaKey === true ) ) ||
             (e.keyCode >= 35 && e.keyCode <= 40)) {
             return;
         }
@@ -165,7 +165,7 @@ $(document).ready(function() {
     });
 
     $("#smsnumber").keyup(function(){
-        if($(this).val().length !=0) {
+        if($(this).val().length !== 0) {
             $("#smstext").attr("disabled", false);
         } else {
             $("#smstext").attr("disabled", true);
@@ -174,7 +174,7 @@ $(document).ready(function() {
     });
 
     $("#smstext").keyup(function(){
-        if($(this).val().length !=0)
+        if($(this).val().length !== 0)
             $("#sendsms").attr("disabled", false);
         else
             $("#sendsms").attr("disabled",true);

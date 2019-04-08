@@ -1,14 +1,11 @@
 package com.serpentcross.examples.smsservice.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
+@AllArgsConstructor
 public class Response {
-    @Getter @Setter private String message;
-    @Getter @Setter private int errcode;
-
-    public Response(String message, int errcode) {
-        this.message = message;
-        this.errcode = errcode;
-    }
+    private String message;
+    private int errcode;
 }

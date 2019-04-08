@@ -1,6 +1,7 @@
 package com.serpentcross.examples.smsservice.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
 import javax.servlet.Filter;
 
 public class SvInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -22,8 +23,6 @@ public class SvInitializer extends AbstractAnnotationConfigDispatcherServletInit
     
     @Override
     protected Filter[] getServletFilters() {
-    	Filter [] singleton = { new CORSFilter() };
-    	return singleton;
+        return new Filter[]{ new CORSFilter() };
 	}
- 
 }

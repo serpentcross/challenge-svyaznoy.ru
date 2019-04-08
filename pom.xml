@@ -11,11 +11,24 @@
     <name>SMS Service</name>
 
     <properties>
-        <springframework.version>4.2.0.RELEASE</springframework.version>
-        <jackson.version>2.5.3</jackson.version>
+        <springframework.version>5.1.6.RELEASE</springframework.version>
+        <jackson.version>2.9.8</jackson.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -35,9 +48,15 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.10</version>
+            <version>1.18.6</version>
             <scope>provided</scope>
         </dependency>
 
@@ -50,7 +69,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>4.0.1</version>
         </dependency>
 
         <dependency>
@@ -68,7 +87,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
+            <version>1.8.0-beta4</version>
         </dependency>
 
     </dependencies>
@@ -93,8 +112,8 @@
 		    <artifactId>maven-compiler-plugin</artifactId>
 		    <version>3.1</version>
 		    <configuration>
-    			<source>1.7</source>
-    			<target>1.7</target>
+    			<source>1.8</source>
+    			<target>1.8</target>
 		    </configuration>
 		</plugin>
 	    </plugins>

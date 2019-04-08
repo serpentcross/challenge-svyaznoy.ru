@@ -2,28 +2,35 @@ package com.serpentcross.examples.smsservice.configuration;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+
 import java.util.LinkedHashMap;
+import java.util.Objects;
 import java.util.Properties;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import javax.sql.DataSource;
+
 import com.serpentcross.examples.smsservice.constants.DataBaseProperties;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.serpentcross.examples.smsservice")
-public class SvConfiguration extends WebMvcConfigurerAdapter {
+public class SvConfiguration implements WebMvcConfigurer {
 
-	public LinkedHashMap<String, String> loadPropertiesFile() throws Exception {
+	private LinkedHashMap<String, String> loadPropertiesFile() throws Exception {
 
 		LinkedHashMap<String, String> connectionSettings = new LinkedHashMap<>();
 		InputStream inputStream = null;
@@ -47,12 +54,12 @@ public class SvConfiguration extends WebMvcConfigurerAdapter {
 		} catch (Exception e) {
 			System.err.println("Error! Exception:" + e);
 		} finally {
-			inputStream.close();
+			Objects.requireNonNull(inputStream).close();
 		}
 
 		return connectionSettings;
 	}
-	
+
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
